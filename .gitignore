@@ -1,0 +1,24 @@
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+.publish/
+node_modules/
+admin/node_modules/
+admin/bower_components/
+.idea/workspace.xml
+
+front/dist/.DS_Store
