@@ -2,23 +2,13 @@
 var gulp = require('gulp');
 var harp = require("harp");
 var runSequence = require('run-sequence');
-var copy2 = require('gulp-copy2');
 var shell = require('gulp-shell');
 var deploy = require('gulp-gh-pages');
 
 /**
- * 复制生成的前端文件到 halp 目录
- */
-gulp.task('copy', function () {
-    var paths = [{src: 'front/dist/**/*', dest: 'docs/www/dist/'}];
-    return copy2(paths);
-});
-
-
-/**
  * 编译 docs 文件夹里面的说明文档
  */
-gulp.task('harp', shell.task(['harp compile docs', 'gulp copy']));
+gulp.task('harp', shell.task(['harp compile docs']));
 
 
 /**
