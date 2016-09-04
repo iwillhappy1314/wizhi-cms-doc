@@ -42,3 +42,5 @@ new Dispatch( [
 	},
 ] );
 ```
+- $request 就是前面字符串的内容
+- $status 可以直接在模板中使用
