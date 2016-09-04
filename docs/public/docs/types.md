@@ -23,7 +23,20 @@ if ( function_exists ("wizhi_create_types") and function_exists ("wizhi_create_t
 }
 ```
 
-把以上代码加入到主题的function.php即可
+把以上代码加入到主题的function.php即可。
+
+### 添加文章类型支持
+
+如果默认的文章类型不支持我们需要的功能，我们可以自己添加, 如下面的例子就是给页面添加摘要。
+
+```php
+function wizhi_add_excerpt_support_for_pages() {
+	add_post_type_support( 'page', 'excerpt' );
+}
+add_action( 'init', 'wizhi_add_excerpt_support_for_pages' );
+```
+
+可以添加就可以移除，相反的函数是 `remove_post_type_support`。
 
 ## 文章类型设置
 

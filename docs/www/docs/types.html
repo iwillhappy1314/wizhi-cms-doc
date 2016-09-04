@@ -17,7 +17,14 @@
   wizhi_create_taxs( &quot;procat&quot;, &#39;pro&#39;, &quot;产品分类&quot; );
 }
 </code></pre>
-<p>把以上代码加入到主题的function.php即可</p>
+<p>把以上代码加入到主题的function.php即可。</p>
+<h3>添加文章类型支持</h3><p>如果默认的文章类型不支持我们需要的功能，我们可以自己添加, 如下面的例子就是给页面添加摘要。</p>
+<pre><code class="language-php">function wizhi_add_excerpt_support_for_pages() {
+    add_post_type_support( &#39;page&#39;, &#39;excerpt&#39; );
+}
+add_action( &#39;init&#39;, &#39;wizhi_add_excerpt_support_for_pages&#39; );
+</code></pre>
+<p>可以添加就可以移除，相反的函数是 <code>remove_post_type_support</code>。</p>
 <h2>文章类型设置</h2><p>内置的文章类型均支持文章类型设置，目前支持的设置选项有:</p>
 <ul>
 <li>封面图像</li>

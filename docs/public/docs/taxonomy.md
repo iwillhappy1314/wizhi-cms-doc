@@ -20,4 +20,15 @@ if ( function_exists ("wizhi_create_types") and function_exists ("wizhi_create_t
 }
 ```
 
-把以上代码加入到主题的function.php即可
+把以上代码加入到主题的function.php即可。
+
+### 添加已注册的分类方法到文章类型
+
+有时候，两个文章类型可能需要共用一个分类方法，而分类方法只能注册一次，这种情况下，我们只需要把已经注册的分类方法添加到现有的文章类型就可以了。
+
+```php
+add_action('init','wizhi_add_categories_to_page');
+function wizhi_add_categories_to_page(){
+	register_taxonomy_for_object_type('category', 'page');
+}
+```
