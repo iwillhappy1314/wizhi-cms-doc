@@ -2,7 +2,8 @@
 
 ### 为什么要使用文章类型和分类法
 
-- 每种类型的文章都会有不同的字段，使用文档类型区分开，上传的时候问题比较少。
+- 每种类型的文章都会有不同的属性字段，展示方式，使用文章类型区分开，上传的时候问题比较少，前端展示的时候模板也非常好处理。
+- 内容维护更加清晰简便
 - 显示子菜单的时候比较方便
 
 ### 添加文章类型和分类法的方法
@@ -13,10 +14,12 @@
 
 ```php
 if ( function_exists ("wizhi_create_types") and function_exists ("wizhi_create_taxs") ) {
-        wizhi_create_types( "pro", "产品", array( 'title', 'editor', 'author', 'thumbnail', custom-fields', 'comments' ), true );
-        wizhi_create_taxs( "procat", 'pro', "产品分类" );
-
-        wizhi_create_types( "slider", "幻灯", array( 'title', 'thumbnail' ), true );
+  // 创建自定义文章类型      
+  wizhi_create_types( "pro", "产品", array( 'title', 'editor', 'author', 'thumbnail', custom-fields', 'comments' ), true );
+  wizhi_create_types( "slider", "幻灯", array( 'title', 'thumbnail' ), true );
+  
+  // 创建字段一分类方法
+  wizhi_create_taxs( "procat", 'pro', "产品分类" );
 }
 ```
 
@@ -36,17 +39,17 @@ if ( function_exists ("wizhi_create_types") and function_exists ("wizhi_create_t
 文章类型设置是保存在 WordPress 选项数据表中的，可以用 WordPress 标准的 `get_option` 函数获取设置值，也可以用插件增加的快捷方式：
 
 ```php
-get_archive_option($type, $name)
+get_archive_option($type)
 ```
 
 - $type 字符串，文章类型别名
-- $name 字符串，设置选项名称
 
 ### 目前各选项的名称
 
 设置选项完整的名称为：$type\_archive\_$name
 
-- 封面图像：banner_image
+- 标题：title
+- 封面图像：banner
 - 模板：template
 - 每页文章数：per_page
 - 描述：description
