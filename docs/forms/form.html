@@ -3,7 +3,299 @@
 }
 </style></head><body id="main" data-spy="scroll" data-target="#nav"><header id="header" class="wrapper"><div id="header-inner" class="inner"><h1 id="logo-wrap"><a id="logo" href="/wizhi-cms-doc/">Wizhi CMS</a></h1><nav id="main-nav"><a href="/wizhi-cms-doc/" class="main-nav-link">文档</a><a href="https://github.com/iwillhappy1314/wizhi-cms" class="main-nav-link">代码</a><a target="_blank" href="https://github.com/iwillhappy1314/wizhi-ui" class="main-nav-link">UI 库</a><a target="_blank" href="https://github.com/iwillhappy1314/front" class="main-nav-link">前端工具</a><a target="_blank" href="https://github.com/iwillhappy1314/enter" class="main-nav-link">主题框架</a><a target="_blank" href="https://www.wpzhiku.com" class="main-nav-link">WordPress 智库</a></nav></div></header><div id="content-wrap"><div id="content" class="wrapper"><div id="content-inner"><article itemscope="" itemtype="http://schema.org/Article" class="article-container"><div class="article-inner"><div class="article"><div class="inner"><header class="article-header"><span>Wizhi CMS 文档</span></header><div itemprop="articleBody" class="article-content"><h2>Formmanager</h2><p>Formbuilder 已改用 WordPress FieldManager 的方案, 请参考文档 <a href="http://fieldmanager.org/docs/">Fieldmanager</a></p>
 <p>Formbuilder 的数据结构中，很多类型的数据都是以数组的方式保存的，这种方式可能会在获取和更新数据的时候带来一些不便，不过好处在于可以提高性能。</p>
-<h3>字段组</h3><pre><code class="language-php">add_action( &#39;fm_post_post&#39;, function() {
+<h2>支持的字段类型</h2><h3>Text 文本字段</h3><pre><code class="language-php">add_action( &#39;fm_post_post&#39;, function() {
+    $fm = new Fieldmanager_TextField( array(
+        &#39;name&#39; =&gt; &#39;demo-field&#39;,
+    ) );
+    $fm-&gt;add_meta_box( &#39;TextField Demo&#39;, array( &#39;post&#39; ) );
+} );
+</code></pre>
+<p><strong>html5</strong></p>
+<pre><code class="language-php">add_action( &#39;fm_post_post&#39;, function() {
+    $fm = new Fieldmanager_TextField( array(
+        &#39;name&#39; =&gt; &#39;demo-field&#39;,
+        &#39;input_type&#39; =&gt; &#39;color&#39;,
+    ) );
+    $fm-&gt;add_meta_box( &#39;TextField Demo&#39;, array( &#39;post&#39; ) );
+} );
+</code></pre>
+<h3>Media 文件上传</h3><pre><code class="language-php">add_action( &#39;fm_post_post&#39;, function() {
+    $fm = new Fieldmanager_Media( array(
+        &#39;name&#39; =&gt; &#39;demo-media&#39;,
+    ) );
+    $fm-&gt;add_meta_box( &#39;Media Field&#39;, array( &#39;post&#39; ) );
+} );
+</code></pre>
+<p><strong>带选项</strong></p>
+<pre><code class="language-php">add_action( &#39;fm_post_post&#39;, function() {
+    $fm = new Fieldmanager_Media( array(
+        &#39;name&#39; =&gt; &#39;demo-media&#39;,
+        &#39;button_label&#39; =&gt; &#39;Add Icon&#39;,
+        &#39;modal_title&#39; =&gt; &#39;Select Icon&#39;,
+        &#39;modal_button_label&#39; =&gt; &#39;Use Image as Icon&#39;,
+        &#39;preview_size&#39; =&gt; &#39;icon&#39;,
+    ) );
+    $fm-&gt;add_meta_box( &#39;Media Field&#39;, array( &#39;post&#39; ) );
+} );
+</code></pre>
+<h3>TextArea 多段文本</h3><pre><code class="language-php">add_action( &#39;fm_post_post&#39;, function() {
+    $fm = new Fieldmanager_TextArea( array(
+        &#39;name&#39; =&gt; &#39;demo-field&#39;,
+    ) );
+    $fm-&gt;add_meta_box( &#39;TextArea Demo&#39;, array( &#39;post&#39; ) );
+} );
+</code></pre>
+<p><strong>自定义尺寸</strong></p>
+<pre><code class="language-php">add_action( &#39;fm_post_post&#39;, function() {
+    $fm = new Fieldmanager_TextArea( array(
+        &#39;name&#39; =&gt; &#39;demo-field&#39;,
+        &#39;attributes&#39; =&gt; array(
+            &#39;rows&#39; =&gt; 3,
+            &#39;cols&#39; =&gt; 30,
+        ),
+    ) );
+    $fm-&gt;add_meta_box( &#39;TextArea Demo&#39;, array( &#39;post&#39; ) );
+} );
+</code></pre>
+<h3>RichTextArea 富文本编辑器</h3><pre><code class="language-php">add_action( &#39;fm_post_post&#39;, function() {
+    $fm = new Fieldmanager_RichTextArea( array(
+        &#39;name&#39; =&gt; &#39;demo-field&#39;,
+    ) );
+    $fm-&gt;add_meta_box( &#39;RichTextArea Demo&#39;, array( &#39;post&#39; ) );
+} );
+</code></pre>
+<p><strong>编辑器设置</strong></p>
+<pre><code class="language-php">add_action( &#39;fm_post_post&#39;, function() {
+    $fm = new Fieldmanager_RichTextArea( array(
+        &#39;name&#39; =&gt; &#39;demo-field&#39;,
+        &#39;editor_settings&#39; =&gt; array(
+            &#39;media_buttons&#39; =&gt; false,
+        ),
+    ) );
+    $fm-&gt;add_meta_box( &#39;RichTextArea Demo&#39;, array( &#39;post&#39; ) );
+} );
+</code></pre>
+<p>可视化编辑器可用选项参考 ：<a href="https://codex.wordpress.org/Function_Reference/wp_editor#Arguments">https://codex.wordpress.org/Function_Reference/wp_editor#Arguments</a></p>
+<p><strong>简单编辑器</strong></p>
+<pre><code class="language-php">add_action( &#39;fm_post_post&#39;, function() {
+    $fm = new Fieldmanager_RichTextArea( array(
+        &#39;name&#39; =&gt; &#39;demo-mini-field&#39;,
+        &#39;buttons_1&#39; =&gt; array( &#39;bold&#39;, &#39;italic&#39;, &#39;bullist&#39;, &#39;numlist&#39;, &#39;link&#39; ),
+        &#39;buttons_2&#39; =&gt; array(),
+        &#39;editor_settings&#39; =&gt; array(
+            &#39;quicktags&#39; =&gt; false,
+            &#39;media_buttons&#39; =&gt; false,
+        ),
+    ) );
+    $fm-&gt;add_meta_box( &#39;RichTextArea Demo&#39;, array( &#39;post&#39; ), &#39;side&#39; );
+} );
+</code></pre>
+<h3>Radios 单选项</h3><pre><code class="language-php">add_action( &#39;fm_post_post&#39;, function() {
+    $fm = new Fieldmanager_Radios( array(
+        &#39;name&#39; =&gt; &#39;demo-field&#39;,
+        &#39;options&#39; =&gt; array(
+            &#39;red&#39; =&gt; &#39;Red&#39;,
+            &#39;green&#39; =&gt; &#39;Green&#39;,
+            &#39;blue&#39; =&gt; &#39;Blue&#39;,
+        ),
+    ) );
+    $fm-&gt;add_meta_box( &#39;Radio Fields&#39;, array( &#39;post&#39; ) );
+} );
+</code></pre>
+<p><strong>数据来源</strong></p>
+<pre><code class="language-php">add_action( &#39;fm_post_post&#39;, function() {
+    $fm = new Fieldmanager_Radios( array(
+        &#39;name&#39; =&gt; &#39;demo-field&#39;,
+        &#39;datasource&#39; =&gt; new Fieldmanager_Datasource_User,
+    ) );
+    $fm-&gt;add_meta_box( &#39;Radio Buttons Demo&#39;, array( &#39;post&#39; ) );
+} );
+</code></pre>
+<h3>Checkbox 选项</h3><pre><code class="language-php">add_action( &#39;fm_post_post&#39;, function() {
+    $fm = new Fieldmanager_Checkbox( array(
+        &#39;name&#39; =&gt; &#39;demo-field&#39;,
+        &#39;label&#39; =&gt; &#39;Checkbox Label&#39;,
+    ) );
+    $fm-&gt;add_meta_box( &#39;Basic Checkbox&#39;, array( &#39;post&#39; ) );
+} );
+</code></pre>
+<p>设置选中项值</p>
+<pre><code class="language-php">add_action( &#39;fm_post_post&#39;, function() {
+    $fm = new Fieldmanager_Checkbox( array(
+        &#39;name&#39; =&gt; &#39;demo-field&#39;,
+        &#39;label&#39; =&gt; &#39;Sample Checkbox&#39;,
+        &#39;checked_value&#39; =&gt; &#39;yes&#39;,
+        &#39;unchecked_value&#39; =&gt; &#39;no&#39;,
+    ) );
+    $fm-&gt;add_meta_box( &#39;Custom Checkbox Values&#39;, array( &#39;post&#39; ) );
+} );
+</code></pre>
+<h3>CheckBoxes 多选项</h3><pre><code class="language-php">add_action( &#39;fm_post_post&#39;, function() {
+    $fm = new Fieldmanager_Checkboxes( array(
+        &#39;name&#39; =&gt; &#39;demo-field&#39;,
+        &#39;options&#39; =&gt; array(
+            &#39;red&#39; =&gt; &#39;Red&#39;,
+            &#39;green&#39; =&gt; &#39;Green&#39;,
+            &#39;blue&#39; =&gt; &#39;Blue&#39;,
+        ),
+    ) );
+    $fm-&gt;add_meta_box( &#39;Checkboxes Demo&#39;, array( &#39;post&#39; ) );
+} );
+</code></pre>
+<p><strong>数据来源</strong></p>
+<pre><code class="language-php">add_action( &#39;fm_post_post&#39;, function() {
+    $fm = new Fieldmanager_Checkboxes( array(
+        &#39;name&#39; =&gt; &#39;demo-field&#39;,
+        &#39;datasource&#39; =&gt; new Fieldmanager_Datasource_User,
+    ) );
+    $fm-&gt;add_meta_box( &#39;Checkboxes Demo&#39;, array( &#39;post&#39; ) );
+} );
+</code></pre>
+<h3>Select 下拉选择</h3><pre><code class="language-php">add_action( &#39;fm_post_post&#39;, function() {
+    $fm = new Fieldmanager_Select( array(
+        &#39;name&#39; =&gt; &#39;demo-field&#39;,
+        &#39;options&#39; =&gt; array(
+            &#39;red&#39; =&gt; &#39;Red&#39;,
+            &#39;green&#39; =&gt; &#39;Green&#39;,
+            &#39;blue&#39; =&gt; &#39;Blue&#39;,
+        ),
+    ) );
+    $fm-&gt;add_meta_box( &#39;Select Demo&#39;, array( &#39;post&#39; ) );
+} );
+</code></pre>
+<p><strong>第一项为空</strong></p>
+<pre><code class="language-php">add_action( &#39;fm_post_post&#39;, function() {
+    $fm = new Fieldmanager_Select( array(
+        &#39;name&#39; =&gt; &#39;demo-field&#39;,
+        &#39;first_empty&#39; =&gt; true,
+        &#39;options&#39; =&gt; array(
+            &#39;red&#39; =&gt; &#39;Red&#39;,
+            &#39;green&#39; =&gt; &#39;Green&#39;,
+            &#39;blue&#39; =&gt; &#39;Blue&#39;,
+        ),
+    ) );
+    $fm-&gt;add_meta_box( &#39;Select Demo&#39;, array( &#39;post&#39; ) );
+} );
+</code></pre>
+<p><strong>数据来源</strong></p>
+<pre><code class="language-php">add_action( &#39;fm_post_post&#39;, function() {
+    $fm = new Fieldmanager_Select( array(
+        &#39;name&#39; =&gt; &#39;demo-field&#39;,
+        &#39;datasource&#39; =&gt; new Fieldmanager_Datasource_User,
+    ) );
+    $fm-&gt;add_meta_box( &#39;Select Demo&#39;, array( &#39;post&#39; ) );
+} );
+</code></pre>
+<p><strong>下拉选择多选</strong></p>
+<pre><code class="language-php">add_action( &#39;fm_post_post&#39;, function() {
+    $fm = new Fieldmanager_Select( array(
+        &#39;name&#39; =&gt; &#39;demo-field&#39;,
+        &#39;multiple&#39; =&gt; true,
+        &#39;attributes&#39; =&gt; array(
+            &#39;size&#39; =&gt; 3,
+        ),
+        &#39;options&#39; =&gt; array(
+            &#39;red&#39; =&gt; &#39;Red&#39;,
+            &#39;green&#39; =&gt; &#39;Green&#39;,
+            &#39;blue&#39; =&gt; &#39;Blue&#39;,
+        ),
+    ) );
+    $fm-&gt;add_meta_box( &#39;Select Demo&#39;, array( &#39;post&#39; ) );
+} );
+</code></pre>
+<h3>Color Picker 颜色选择</h3><pre><code class="language-php">$fm = new Fieldmanager_Colorpicker( array(
+    &#39;name&#39; =&gt; &#39;basic_colorpicker&#39;,
+) );
+$fm-&gt;add_meta_box( &#39;Basic Colorpicker&#39;, &#39;post&#39; );
+</code></pre>
+<h3>Date Picker 日期选择</h3><pre><code class="language-php">add_action( &#39;fm_post_post&#39;, function() {
+    $fm = new Fieldmanager_Datepicker( array(
+        &#39;name&#39; =&gt; &#39;demo-field&#39;,
+    ) );
+    $fm-&gt;add_meta_box( &#39;Datepicker Demo&#39;, array( &#39;post&#39; ) );
+} );
+</code></pre>
+<p><strong>带时间</strong></p>
+<pre><code class="language-php">add_action( &#39;fm_post_post&#39;, function() {
+    $fm = new Fieldmanager_Datepicker( array(
+        &#39;name&#39; =&gt; &#39;demo-field&#39;,
+        &#39;use_time&#39; =&gt; true,
+    ) );
+    $fm-&gt;add_meta_box( &#39;Datepicker Demo&#39;, array( &#39;post&#39; ) );
+} );
+</code></pre>
+<p><strong>自定义日期格式</strong></p>
+<pre><code class="language-php">add_action( &#39;fm_post_post&#39;, function() {
+    $fm = new Fieldmanager_Datepicker( array(
+        &#39;name&#39; =&gt; &#39;demo-field&#39;,
+        &#39;date_format&#39; =&gt; &#39;Y-m-d&#39;,
+        &#39;js_opts&#39; =&gt; array(
+            &#39;dateFormat&#39; =&gt; &#39;yy-mm-dd&#39;,
+        ),
+    ) );
+    $fm-&gt;add_meta_box( &#39;Datepicker Demo&#39;, array( &#39;post&#39; ) );
+} );
+</code></pre>
+<h3>Hidden 隐藏字段</h3><pre><code class="language-php">add_action( &#39;fm_post_post&#39;, function() {
+    $fm = new Fieldmanager_Hidden( array(
+        &#39;name&#39; =&gt; &#39;demo-field&#39;,
+    ) );
+    $fm-&gt;add_meta_box( &#39;Uninteresting Demo&#39;, array( &#39;post&#39; ) );
+} );
+</code></pre>
+<h3>Link 链接</h3><pre><code class="language-php">add_action( &#39;fm_post_post&#39;, function() {
+    $fm = new Fieldmanager_Link( array(
+        &#39;name&#39; =&gt; &#39;demo-link&#39;,
+    ) );
+    $fm-&gt;add_meta_box( &#39;Basic Link Field&#39;, array( &#39;post&#39; ) );
+} );
+</code></pre>
+<h3>Password 密码</h3><pre><code class="language-php">add_action( &#39;fm_post_post&#39;, function() {
+    $fm = new Fieldmanager_Password( array(
+        &#39;name&#39; =&gt; &#39;demo-password&#39;,
+    ) );
+    $fm-&gt;add_meta_box( &#39;Password Field&#39;, array( &#39;post&#39; ) );
+} );
+</code></pre>
+<h3>Autocomplete 自动完成</h3><pre><code class="language-php">$fm = new Fieldmanager_Autocomplete( array(
+    &#39;name&#39; =&gt; &#39;size&#39;,
+    &#39;datasource&#39;  =&gt; new Fieldmanager_Datasource( array(
+        &#39;options&#39; =&gt; array( &#39;Small&#39;, &#39;Medium&#39;, &#39;Large&#39; ),
+    ) ),
+) );
+$fm-&gt;add_meta_box( &#39;Autocomplete Field&#39;, &#39;post&#39; );
+</code></pre>
+<p><strong>数据来源</strong></p>
+<pre><code class="language-php">$fm = new Fieldmanager_Autocomplete( array(
+    &#39;name&#39; =&gt; &#39;related_post&#39;,
+    &#39;show_edit_link&#39; =&gt; true,
+    &#39;datasource&#39; =&gt; new Fieldmanager_Datasource_Post( array(
+        &#39;query_args&#39; =&gt; array( &#39;post_type&#39; =&gt; &#39;post&#39; ),
+    ) ),
+) );
+$fm-&gt;add_meta_box( &#39;Related Post&#39;, &#39;post&#39; );
+</code></pre>
+<h2>元数据盒子显示的位置</h2><h3>文章类型</h3><pre><code class="language-php">$fm-&gt;add_meta_box( &#39;Basic Field&#39;, &#39;post&#39; );
+</code></pre>
+<h3>分类项目</h3><pre><code class="language-php">$fm-&gt;add_term_meta_box( &#39;Basic Field&#39;, &#39;category&#39; );
+</code></pre>
+<h3>子菜单页面</h3><pre><code class="language-php">if ( function_exists( &#39;fm_register_submenu_page&#39; ) ) {
+    fm_register_submenu_page( &#39;my_fields&#39;, &#39;tools.php&#39;, &#39;Meta Fields&#39; );
+}
+add_action( &#39;fm_submenu_my_fields&#39;, function() {
+    $fm = new Fieldmanager_TextField( array(
+        &#39;name&#39; =&gt; &#39;my_fields&#39;,
+    ) );
+    $fm-&gt;activate_submenu_page();
+} );
+</code></pre>
+<h3>用户资料</h3><pre><code class="language-php">$fm-&gt; add_user_form( &#39;Basic Field&#39; );
+</code></pre>
+<h3>文章快速编辑</h3><pre><code class="language-php">$fm-&gt;add_quickedit_box( &#39;Basic Field&#39;, &#39;post&#39;, function( $values ) {
+    return ! empty( $values[&#39;demo&#39;] ) ? $values[&#39;demo&#39;] : &#39;&#39;;
+} );
+</code></pre>
+<h2>字段组</h2><pre><code class="language-php">add_action( &#39;fm_post_post&#39;, function() {
     $fm = new Fieldmanager_Group( array(
         &#39;name&#39; =&gt; &#39;demo-group&#39;,
         &#39;children&#39; =&gt; array(
@@ -19,7 +311,7 @@
 <li>&#39;name&#39;: 自定子字段组的名称，children 以数组的形式保存为自定义字段。</li>
 <li>array(&#39;post&#39;): 字段支持的自定义文章类型 </li>
 </ul>
-<h3>带选项卡的自定义字段盒子</h3><pre><code class="language-php">add_action( &#39;fm_post_post&#39;, function() {
+<h2>带选项卡的自定义字段盒子</h2><pre><code class="language-php">add_action( &#39;fm_post_post&#39;, function() {
     $fm = new Fieldmanager_Group( array(
         &#39;name&#39;           =&gt; &#39;tabbed_meta_fields&#39;,
         &#39;tabbed&#39;         =&gt; &#39;vertical&#39;,

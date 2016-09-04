@@ -5,7 +5,7 @@
 <li>只有自定义数据表才使用 ORM 操作，WordPress 默认的数据表尽量使用官方的函数存取</li>
 <li>注意字段类型，如果数据表字段类型不匹配，保存数据会失败</li>
 </ul>
-<h2>使用方法</h2><p>先新建一个常亮，把数据表名称放进去，如：</p>
+<h2>使用方法</h2><p>先新建一个常量，把数据表名称放进去，如：</p>
 <pre><code class="language-php">define( &#39;BOOK&#39;, &#39;wp_messages&#39; );
 
 $book = R::model( BOOK );
