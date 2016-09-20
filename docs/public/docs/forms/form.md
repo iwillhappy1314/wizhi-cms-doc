@@ -435,7 +435,7 @@ add_action( 'fm_post_post', function() {
     $fm = new Fieldmanager_Group( array(
         'name' => 'demo-group',
         'serialize_data' => false,
-	'add_to_prefix'  => false,
+        'add_to_prefix'  => false,
         'children' => array(
             'field-one' => new Fieldmanager_TextField( 'First Field' ),
             'field-two' => new Fieldmanager_TextField( 'Second Field' ),
@@ -458,8 +458,8 @@ add_action( 'fm_post_post', function() {
         'name'           => 'tabbed_meta_fields',
         'tabbed'         => 'vertical',
         //'tabbed'         => 'horizontal',
-		'serialize_data' => false,
-		'add_to_prefix'  => false,
+        'serialize_data' => false,
+        'add_to_prefix'  => false,
         'children'       => array(
             'tab-1' => new Fieldmanager_Group( array(
 		       'serialize_data' => false,
