@@ -311,7 +311,10 @@ add_action( &#39;fm_submenu_my_fields&#39;, function() {
 </code></pre>
 <p>上面的代码中：</p>
 <ul>
-<li>&#39;name&#39;: 自定子字段组的名称，children 以数组的形式保存为自定义字段。</li>
+<li>name: 字段组的名称，children 以数组的形式保存为自定义字段。</li>
+<li>serialize_data: 是否序列化字段组的数据，不序列化方便访问自断组中的数据，序列化提高访问效率，酌情使用。</li>
+<li>add_to_prefix: 序列化后，是否添加前缀。</li>
+<li>children: 字段组中的字段</li>
 <li>array(&#39;post&#39;): 字段支持的自定义文章类型 </li>
 </ul>
 <h2>带选项卡的自定义字段盒子</h2><pre><code class="language-php">add_action( &#39;fm_post_post&#39;, function() {
