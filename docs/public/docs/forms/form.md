@@ -434,6 +434,8 @@ $fm->add_quickedit_box( 'Basic Field', 'post', function( $values ) {
 add_action( 'fm_post_post', function() {
     $fm = new Fieldmanager_Group( array(
         'name' => 'demo-group',
+        'serialize_data' => false,
+	'add_to_prefix'  => false,
         'children' => array(
             'field-one' => new Fieldmanager_TextField( 'First Field' ),
             'field-two' => new Fieldmanager_TextField( 'Second Field' ),
@@ -455,8 +457,13 @@ add_action( 'fm_post_post', function() {
     $fm = new Fieldmanager_Group( array(
         'name'           => 'tabbed_meta_fields',
         'tabbed'         => 'vertical',
+        //'tabbed'         => 'horizontal',
+		'serialize_data' => false,
+		'add_to_prefix'  => false,
         'children'       => array(
             'tab-1' => new Fieldmanager_Group( array(
+		       'serialize_data' => false,
+		       'add_to_prefix'  => false,
                 'label'          => 'First Tab',
                 'children'       => array(
                     'text' => new Fieldmanager_Textfield( 'Text Field' ),
@@ -464,6 +471,8 @@ add_action( 'fm_post_post', function() {
             ) ),
             'tab-2' => new Fieldmanager_Group( array(
                 'label'          => 'Second Tab',
+			   'serialize_data' => false,
+		       'add_to_prefix'  => false,
                 'children'       => array(
                     'textarea' => new Fieldmanager_TextArea( 'TextArea' ),
                     'media'    => new Fieldmanager_Media( 'Media File' ),

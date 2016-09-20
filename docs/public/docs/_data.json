@@ -41,7 +41,7 @@
     "title": "表单构建类",
     "sub": {
       "forms/form": {
-        "title": "设置选项构建类"
+        "title": "字段类型"
       },
       "forms/option": {
         "title": "设置选项"
