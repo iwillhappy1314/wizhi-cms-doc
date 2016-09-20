@@ -447,7 +447,10 @@ add_action( 'fm_post_post', function() {
 
 上面的代码中：
 
-- 'name': 自定子字段组的名称，children 以数组的形式保存为自定义字段。
+- name: 字段组的名称，children 以数组的形式保存为自定义字段。
+- serialize_data: 是否序列化字段组的数据，不序列化方便访问自断组中的数据，序列化提高访问效率，酌情使用。
+- add_to_prefix: 序列化后，是否添加前缀。
+- children: 字段组中的字段
 - array('post'): 字段支持的自定义文章类型 
 
 ## 带选项卡的自定义字段盒子
