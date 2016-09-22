@@ -15,7 +15,7 @@
 ```php
 if ( function_exists ("wizhi_create_types") and function_exists ("wizhi_create_taxs") ) {
   // 创建自定义文章类型      
-  wizhi_create_types( "pro", "产品", array( 'title', 'editor', 'author', 'thumbnail', custom-fields', 'comments' ), true );
+  wizhi_create_types( "pro", "产品", array( 'title', 'editor', 'author', 'thumbnail', 'custom-fields', 'comments' ), true );
   wizhi_create_types( "slider", "幻灯", array( 'title', 'thumbnail' ), true );
   
   // 创建字段一分类方法

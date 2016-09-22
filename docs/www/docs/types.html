@@ -10,7 +10,7 @@
 <p>其中<code>pro</code>是保存在数据库中的文章类型的名称，通过这个字段区分不同的文章类型。‘产品’是显示在后台菜单中的名称。</p>
 <pre><code class="language-php">if ( function_exists (&quot;wizhi_create_types&quot;) and function_exists (&quot;wizhi_create_taxs&quot;) ) {
   // 创建自定义文章类型      
-  wizhi_create_types( &quot;pro&quot;, &quot;产品&quot;, array( &#39;title&#39;, &#39;editor&#39;, &#39;author&#39;, &#39;thumbnail&#39;, custom-fields&#39;, &#39;comments&#39; ), true );
+  wizhi_create_types( &quot;pro&quot;, &quot;产品&quot;, array( &#39;title&#39;, &#39;editor&#39;, &#39;author&#39;, &#39;thumbnail&#39;, &#39;custom-fields&#39;, &#39;comments&#39; ), true );
   wizhi_create_types( &quot;slider&quot;, &quot;幻灯&quot;, array( &#39;title&#39;, &#39;thumbnail&#39; ), true );
 
   // 创建字段一分类方法
