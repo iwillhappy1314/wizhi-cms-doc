@@ -19,7 +19,7 @@ add_action( 'fm_post_post', function() {
 } );
 ```
 
-**html5**
+**html5 支持**
 
 ```php
 add_action( 'fm_post_post', function() {
