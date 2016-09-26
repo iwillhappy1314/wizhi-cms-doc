@@ -296,7 +296,7 @@ add_action( &#39;fm_submenu_my_fields&#39;, function() {
     return ! empty( $values[&#39;demo&#39;] ) ? $values[&#39;demo&#39;] : &#39;&#39;;
 } );
 </code></pre>
-<h2>字段组</h2><pre><code class="language-php">add_action( &#39;fm_post_post&#39;, function() {
+<h2>字段组</h2><pre><code class="language-php">add_action( &#39;after_setup_theme&#39;, function() {
     $fm = new Fieldmanager_Group( array(
         &#39;name&#39; =&gt; &#39;demo-group&#39;,
         &#39;serialize_data&#39; =&gt; false,
@@ -317,7 +317,7 @@ add_action( &#39;fm_submenu_my_fields&#39;, function() {
 <li>children: 字段组中的字段</li>
 <li>array(&#39;post&#39;): 字段支持的自定义文章类型 </li>
 </ul>
-<h2>带选项卡的自定义字段盒子</h2><pre><code class="language-php">add_action( &#39;fm_post_post&#39;, function() {
+<h2>带选项卡的自定义字段盒子</h2><pre><code class="language-php">add_action( &#39;after_setup_theme&#39;, function() {
     $fm = new Fieldmanager_Group( array(
         &#39;name&#39;           =&gt; &#39;tabbed_meta_fields&#39;,
         &#39;tabbed&#39;         =&gt; &#39;vertical&#39;,
