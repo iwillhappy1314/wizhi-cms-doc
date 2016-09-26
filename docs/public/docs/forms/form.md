@@ -431,7 +431,7 @@ $fm->add_quickedit_box( 'Basic Field', 'post', function( $values ) {
 ## 字段组
 
 ```php
-add_action( 'fm_post_post', function() {
+add_action( 'after_setup_theme', function() {
     $fm = new Fieldmanager_Group( array(
         'name' => 'demo-group',
         'serialize_data' => false,
@@ -456,7 +456,7 @@ add_action( 'fm_post_post', function() {
 ## 带选项卡的自定义字段盒子
 
 ```php
-add_action( 'fm_post_post', function() {
+add_action( 'after_setup_theme', function() {
     $fm = new Fieldmanager_Group( array(
         'name'           => 'tabbed_meta_fields',
         'tabbed'         => 'vertical',
