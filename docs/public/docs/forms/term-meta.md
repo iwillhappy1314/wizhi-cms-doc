@@ -21,4 +21,17 @@ function wizhi_cms_term_meta() {
 	] );
 	$fm->add_term_meta_box( __( 'Archive template', 'wizhi' ), 'category' );
 }
+
+add_action( 'after_setup_theme', function() {
+    $fm = new Fieldmanager_Group( array(
+        'name' => 'demo-group',
+        'serialize_data' => false,
+        'add_to_prefix'  => false,
+        'children' => array(
+            'field-one' => new Fieldmanager_TextField( 'First Field' ),
+            'field-two' => new Fieldmanager_TextField( 'Second Field' ),
+        ),
+    ) );
+    $fm->add_term_meta_box( 'Basic Group', array( 'post' ) );
+} );
 ```
