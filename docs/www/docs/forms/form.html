@@ -317,6 +317,26 @@ add_action( &#39;fm_submenu_my_fields&#39;, function() {
 <li>children: 字段组中的字段</li>
 <li>array(&#39;post&#39;): 字段支持的自定义文章类型 </li>
 </ul>
+<h2>字段组字段带选项</h2><pre><code class="language-php">add_action( &#39;after_setup_theme&#39;, function() {
+    $fm = new Fieldmanager_Group( array(
+        &#39;name&#39; =&gt; &#39;demo-group&#39;,
+        &#39;serialize_data&#39; =&gt; false,
+        &#39;add_to_prefix&#39;  =&gt; false,
+        &#39;children&#39; =&gt; array(
+            &#39;field-one&#39; =&gt; new Fieldmanager_TextField( &#39;First Field&#39; ),
+            &#39;field-two&#39; =&gt; new Fieldmanager_RichTextArea( [
+                        &#39;label&#39;      =&gt; &#39;使用方法&#39;,
+                        &#39;attributes&#39; =&gt; [
+                            &#39;rows&#39;     =&gt; 5,
+                            &#39;cols&#39;     =&gt; 50,
+                            &#39;readonly&#39; =&gt; true,
+                        ],
+                    ] ),
+        ),
+    ) );
+    $fm-&gt;add_meta_box( &#39;Basic Group&#39;, array( &#39;post&#39; ) );
+} );
+</code></pre>
 <h2>带选项卡的自定义字段盒子</h2><pre><code class="language-php">add_action( &#39;after_setup_theme&#39;, function() {
     $fm = new Fieldmanager_Group( array(
         &#39;name&#39;           =&gt; &#39;tabbed_meta_fields&#39;,

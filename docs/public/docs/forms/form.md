@@ -453,6 +453,32 @@ add_action( 'after_setup_theme', function() {
 - children: 字段组中的字段
 - array('post'): 字段支持的自定义文章类型 
 
+## 字段组字段带选项
+
+````php
+add_action( 'after_setup_theme', function() {
+    $fm = new Fieldmanager_Group( array(
+        'name' => 'demo-group',
+        'serialize_data' => false,
+        'add_to_prefix'  => false,
+        'children' => array(
+            'field-one' => new Fieldmanager_TextField( 'First Field' ),
+            'field-two' => new Fieldmanager_RichTextArea( [
+						'label'      => '使用方法',
+						'attributes' => [
+							'rows'     => 5,
+							'cols'     => 50,
+							'readonly' => true,
+						],
+					] ),
+        ),
+    ) );
+    $fm->add_meta_box( 'Basic Group', array( 'post' ) );
+} );
+````
+
+
+
 ## 带选项卡的自定义字段盒子
 
 ```php
