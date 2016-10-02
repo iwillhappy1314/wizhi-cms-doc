@@ -1,7 +1,7 @@
 ## 显示幻灯片
 
 ```php
-echo do_shortcode('[slider type="slider" tax="slidercat" tag="home" num="4" auto="false" minslides="1" maxslides="4" slidewidth="360", tmp="slider"]');
+echo do_shortcode('[slider type="slider" tax="slidercat" tag="home" num=4 auto="false" minslides=1 maxslides=4 slidewidth=360, tmp="slider"]');
 ```
 
 *简码参数*

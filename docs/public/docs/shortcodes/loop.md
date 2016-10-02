@@ -1,7 +1,7 @@
 ## 显示文章循环内容
 
 ```php
-echo do_shortcode('[loop type="post" tax="category" tag="default" num="6" pager="0" tmp="lists"]');
+echo do_shortcode('[loop type="post" tax="category" tag="default" num=6 pager=0 tmp="lists"]');
 ```
 
 *简码参数*

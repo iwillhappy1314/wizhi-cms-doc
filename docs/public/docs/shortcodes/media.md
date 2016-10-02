@@ -1,7 +1,7 @@
 ## 显示图文文章媒体列表
 
 ```php
-echo do_shortcode('[media type="post" tax="category" tag="default" num="6" heading="false", pager="0" tmp="list"]');
+echo do_shortcode('[media type="post" tax="category" tag="default" num=6 heading="false", pager=0 tmp="list"]');
 ```
 
 *简码参数*

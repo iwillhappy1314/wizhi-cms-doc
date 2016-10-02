@@ -1,7 +1,7 @@
 ## 显示文章标题列表
 
 ```php
-echo do_shortcode('[list type="post" tax="category" tag="default" num="6" heading="false", pager="0" tmp="list"]');
+echo do_shortcode('[list type="post" tax="category" tag="default" num=6 heading="false", pager=0 tmp="list"]');
 ```
 
 *简码参数*

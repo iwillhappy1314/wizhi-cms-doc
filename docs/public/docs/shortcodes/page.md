@@ -1,7 +1,7 @@
 ## 显示页面内容
 
 ```php
-echo do_shortcode('[content id="1" cut="20" more="ture"]');
+echo do_shortcode('[content id=1 cut=20 more="ture"]');
 ```
 
 *简码参数*
