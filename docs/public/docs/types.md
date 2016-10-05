@@ -66,3 +66,16 @@ get_archive_option($type)
 - 模板：template
 - 每页文章数：per_page
 - 描述：description
+
+## 为自定义文章类型添加设置选项支持
+
+```php
+add_filter( 'wizhi_archive_setting_supports', 'enter_add_archive_settings', 10, 3 );
+function enter_add_archive_settings( $types ) {
+	$types[] = 'bulletin';
+	$types[] = 'course';
+	$types[] = 'show';
+
+	return $types;
+}
+```

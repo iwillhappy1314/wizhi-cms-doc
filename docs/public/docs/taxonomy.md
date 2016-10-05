@@ -32,3 +32,16 @@ function wizhi_add_categories_to_page(){
 	register_taxonomy_for_object_type('category', 'page');
 }
 ```
+
+## 为自定义分类方法添加设置支持
+
+```php
+add_filter( 'wizhi_taxonomy_setting_supports', 'enter_add_tax_settings', 10, 3 );
+function enter_add_tax_settings($taxonomies) {
+    $taxonomies[] = 'show_cat';
+    $taxonomies[] = 'course_cat';
+  
+	return $taxonomies;
+}
+```
+
