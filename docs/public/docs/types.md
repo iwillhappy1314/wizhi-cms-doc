@@ -79,3 +79,16 @@ function enter_add_archive_settings( $types ) {
 	return $types;
 }
 ```
+## 添加更多表单项目
+
+可以添加更多的 Form Manager 表单项目到文章类型自定义设置中。
+
+````php
+add_filter( 'wizhi_archive_setting_fields', 'enter_add_archive_setting_fields', 10, 3 );
+function enter_add_archive_setting_fields( $fields ) {
+	$fields[] = new Fieldmanager_Media( __( 'Cover image', 'wizhi' ) ),;
+  
+	return $fields;
+}
+````
+
