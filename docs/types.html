@@ -1,12 +1,10 @@
 <!DOCTYPE html><html><head><title>文章类型/分类法</title><link rel="stylesheet" href="https://iwillhappy1314.github.io/wizhi-cms-doc/style.css"><meta name="viewport" content="width=device-width, initial-scale=1"><style>.wrap {
     width: 1200px;
 }
-</style></head><body id="main" data-spy="scroll" data-target="#nav"><header id="header" class="wrapper"><div id="header-inner" class="inner"><h1 id="logo-wrap"><a id="logo" href="/wizhi-cms-doc/">Wizhi CMS</a></h1><nav id="main-nav"><a href="/wizhi-cms-doc/" class="main-nav-link">文档</a><a target="_blank" href="https://github.com/iwillhappy1314/wizhi-cms" class="main-nav-link">代码</a><a target="_blank" href="https://github.com/iwillhappy1314/wizhi-ui" class="main-nav-link">UI 库</a><a target="_blank" href="https://github.com/iwillhappy1314/front" class="main-nav-link">前端工具</a><a target="_blank" href="https://github.com/iwillhappy1314/enter" class="main-nav-link">主题框架</a><a target="_blank" href="https://www.wpzhiku.com" class="main-nav-link">WordPress 智库</a></nav></div></header><div id="content-wrap"><div id="content" class="wrapper"><div id="content-inner"><article itemscope="" itemtype="http://schema.org/Article" class="article-container"><div class="article-inner"><div class="article"><div class="inner"><header class="article-header"><span>文章类型/分类法</span></header><div itemprop="articleBody" class="article-content"><h2>快速添加文章类型和分类法</h2><h3>为什么要使用文章类型和分类法</h3><ul>
-<li>每种类型的文章都会有不同的属性字段，展示方式，使用文章类型区分开，上传的时候问题比较少，前端展示的时候模板也非常好处理。</li>
-<li>内容维护更加清晰简便</li>
-<li>显示子菜单的时候比较方便</li>
-</ul>
-<h3>添加文章类型和分类法的方法</h3><p>添加之前，首先判断功能时是否存在，以免禁用或未安装插件时出现错误。</p>
+</style></head><body id="main" data-spy="scroll" data-target="#nav"><header id="header" class="wrapper"><div id="header-inner" class="inner"><h1 id="logo-wrap"><a id="logo" href="/wizhi-cms-doc/">Wizhi CMS</a></h1><nav id="main-nav"><a href="/wizhi-cms-doc/" class="main-nav-link">文档</a><a target="_blank" href="https://github.com/iwillhappy1314/wizhi-cms" class="main-nav-link">代码</a><a target="_blank" href="https://github.com/iwillhappy1314/wizhi-ui" class="main-nav-link">UI 库</a><a target="_blank" href="https://github.com/iwillhappy1314/front" class="main-nav-link">前端工具</a><a target="_blank" href="https://github.com/iwillhappy1314/enter" class="main-nav-link">主题框架</a><a target="_blank" href="https://www.wpzhiku.com" class="main-nav-link">WordPress 智库</a></nav></div></header><div id="content-wrap"><div id="content" class="wrapper"><div id="content-inner"><article itemscope="" itemtype="http://schema.org/Article" class="article-container"><div class="article-inner"><div class="article"><div class="inner"><header class="article-header"><span>文章类型/分类法</span></header><div itemprop="articleBody" class="article-content"><h2>快速添加文章（内容）类型</h2><h3>为什么要使用内容类型</h3><p>每种类型的内容都会有不同的数据，比如“图书”有作者和出版社、“产品”有定价和产地等。</p>
+<p>对于WordPress 的内容管理者来说，使用内容类型把这些不同的内容区分开，在WordPress后台管理的时候会比较容易。</p>
+<p>对于开发者来说，内容类型存档模板和详情模板可以非常的使用 archive-<em> 和 single-</em> 自定义，代码上会更容易区分，更清晰。</p>
+<h3>添加文章类型的方法</h3><p>添加之前，首先判断功能时是否存在，以免禁用或未安装插件时出现错误。</p>
 <p>其中<code>pro</code>是保存在数据库中的文章类型的名称，通过这个字段区分不同的文章类型。‘产品’是显示在后台菜单中的名称。</p>
 <pre><code class="language-php">if ( function_exists (&quot;wizhi_create_types&quot;) and function_exists (&quot;wizhi_create_taxs&quot;) ) {
   // 创建自定义文章类型      
