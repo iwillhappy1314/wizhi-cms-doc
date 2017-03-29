@@ -19,7 +19,8 @@ function wizhi_add_categories_to_page(){
     register_taxonomy_for_object_type(&#39;category&#39;, &#39;page&#39;);
 }
 </code></pre>
-<h2>为自定义分类方法添加设置支持</h2><pre><code class="language-php">add_filter( &#39;wizhi_taxonomy_setting_supports&#39;, &#39;enter_add_tax_settings&#39;, 10, 3 );
+<h2>为自定义分类方法添加设置支持</h2><p>默认的自定义分类方法除了固有的几个字段，是没有太多设置的，可以通过以下方法为自定义分类方法添加设置。</p>
+<pre><code class="language-php">add_filter( &#39;wizhi_taxonomy_setting_supports&#39;, &#39;enter_add_tax_settings&#39;, 10, 3 );
 function enter_add_tax_settings($taxonomies) {
     $taxonomies[] = &#39;show_cat&#39;;
     $taxonomies[] = &#39;course_cat&#39;;
