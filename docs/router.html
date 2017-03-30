@@ -30,7 +30,8 @@ new Dispatch( [
 <li>$request 就是前面字符串的内容</li>
 <li>$status 可以直接在模板中使用</li>
 </ul>
-<h3>使用类中的方法</h3><pre><code class="language-php">new Dispatch( [
+<h3>使用类中的方法</h3><p>路由也可以直接使用类中的方法，示例如下：</p>
+<pre><code class="language-php">new Dispatch( [
     &#39;checkout/&#39; =&gt; array(new CheckoutController, &#39;index&#39;),
     &#39;checkout/([a-z]+)&#39; =&gt; array(new CheckoutController, &#39;show&#39;), array($request, $id), 
     // 后面的参数中，$request = checkout/([a-z]+); $id = ([a-z]+);
