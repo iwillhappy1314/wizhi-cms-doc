@@ -44,3 +44,15 @@ new Dispatch( [
 ```
 - $request 就是前面字符串的内容
 - $status 可以直接在模板中使用
+
+### 使用类中的方法
+路由也可以直接使用类中的方法，示例如下：
+
+````php
+new Dispatch( [
+    'checkout/' => array(new CheckoutController, 'index'),
+    'checkout/([a-z]+)' => array(new CheckoutController, 'show'), array($request, $id), 
+    // 后面的参数中，$request = checkout/([a-z]+); $id = ([a-z]+);
+] );
+````
+
