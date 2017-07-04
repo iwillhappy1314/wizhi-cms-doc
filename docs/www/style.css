@@ -857,12 +857,19 @@ a.article-title:hover {
     font-weight: 700
 }
 
-.article-content table td, .article-content table th {
-    padding: 5px 15px
+.article-content table td,
+.article-content table th {
+    padding: 8px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.article-content table td code,
+.article-content table th code{
+    background: transparent;
 }
 
 .article-content table tr:nth-child(2n) {
-    background: #eee
+    background: #f3f3f3;
 }
 
 .article-footer {
