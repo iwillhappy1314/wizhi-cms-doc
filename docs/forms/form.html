@@ -4,206 +4,206 @@
 </style></head><body id="main" data-spy="scroll" data-target="#nav"><header id="header" class="wrapper"><div id="header-inner" class="inner"><h1 id="logo-wrap"><a id="logo" href="/wizhi-cms-doc/">Wizhi CMS</a></h1><nav id="main-nav"><a href="/wizhi-cms-doc/" class="main-nav-link">文档</a><a target="_blank" href="https://github.com/iwillhappy1314/wizhi-cms" class="main-nav-link">代码</a><a target="_blank" href="https://github.com/iwillhappy1314/wizhi-ui" class="main-nav-link">UI 库</a><a target="_blank" href="https://github.com/iwillhappy1314/front" class="main-nav-link">前端工具</a><a target="_blank" href="https://github.com/iwillhappy1314/enter" class="main-nav-link">主题框架</a><a target="_blank" href="https://www.wpzhiku.com" class="main-nav-link">WordPress 智库</a></nav></div></header><div id="content-wrap"><div id="content" class="wrapper"><div id="content-inner"><article itemscope="" itemtype="http://schema.org/Article" class="article-container"><div class="article-inner"><div class="article"><div class="inner"><header class="article-header"><span>Wizhi CMS 文档</span></header><div itemprop="articleBody" class="article-content"><h2>Formmanager</h2><p>Formbuilder 已改用 WordPress FieldManager 的方案, 请参考文档 <a href="http://fieldmanager.org/docs/">Fieldmanager</a></p>
 <p>Formbuilder 的数据结构中，很多类型的数据都是以数组的方式保存的，这种方式可能会在获取和更新数据的时候带来一些不便，不过好处在于可以提高性能。</p>
 <p>Frommanager 插件支持以 tab 的形式显示自定义字段，对于自定义字段比较多的站点，可以提升后台的用户体验。</p>
-<h2>Text 类型通用选项</h2><table>
+<table>
 <thead>
 <tr>
-<th><code>public static boolean</code></th>
+<th>public static boolean</th>
 <th><a href="http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#12-16">$debug</a></th>
 <th><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$debug">#</a>If true, throw exceptions for illegal behavior</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>public integer</code></td>
+<td>public integer</td>
 <td><a href="http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#18-22">$limit</a></td>
 <td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$limit">#</a>How many of these fields to display, 0 for no limit</td>
 </tr>
 <tr>
-<td><code>public integer</code></td>
+<td>public integer</td>
 <td><a href="http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#32-38">$minimum_count</a></td>
 <td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$minimum_count">#</a>How many of these fields to display at a minimum, if $limit != 1. If $limit == $minimum_count, the &quot;add another&quot; button and the remove tool will be hidden.</td>
 </tr>
 <tr>
-<td><code>public integer</code></td>
+<td>public integer</td>
 <td><a href="http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#40-45">$extra_elements</a></td>
 <td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$extra_elements">#</a>How many empty fields to display if $limit != 1 when the total fields in the loaded data + $extra_elements &gt; $minimum_count.</td>
 </tr>
 <tr>
-<td><code>public string</code></td>
+<td>public string</td>
 <td><a href="http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#47-51">$add_more_label</a></td>
 <td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$add_more_label">#</a>Text for add more button</td>
 </tr>
 <tr>
-<td><code>public string</code></td>
+<td>public string</td>
 <td><a href="http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#53-57">$name</a></td>
 <td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$name">#</a>The name of the form element, As in &#39;foo&#39; in <input name="foo"></td>
 </tr>
 <tr>
-<td><code>public string</code></td>
+<td>public string</td>
 <td><a href="http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#59-63">$label</a></td>
-<td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$label">#</a>元素的标签文字</td>
+<td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$label">#</a>Label to use for form element</td>
 </tr>
 <tr>
-<td><code>public boolean</code></td>
+<td>public boolean</td>
 <td><a href="http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#65-69">$inline_label</a></td>
 <td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$inline_label">#</a>If true, the label and the element will display on the same line. Some elements may not support this.</td>
 </tr>
 <tr>
-<td><code>public boolean</code></td>
+<td>public boolean</td>
 <td><a href="http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#71-75">$label_after_element</a></td>
 <td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$label_after_element">#</a>If true, the label will be displayed after the element.</td>
 </tr>
 <tr>
-<td><code>public string</code></td>
+<td>public string</td>
 <td><a href="http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#77-81">$description</a></td>
-<td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$description">#</a> 元素的描述</td>
+<td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$description">#</a>Description for the form element</td>
 </tr>
 <tr>
-<td><code>public boolean</code></td>
+<td>public boolean</td>
 <td><a href="http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#83-87">$description_after_element</a></td>
-<td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$description_after_element">#</a>如果为 true，标签将显示在元素后面</td>
+<td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$description_after_element">#</a>If true, the description will be displayed after the element.</td>
 </tr>
 <tr>
-<td>`public string</td>
-<td>boolean[]`</td>
+<td>public string\</td>
+<td>boolean[]</td>
 <td><a href="http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#89-93">$attributes</a></td>
 <td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$attributes">#</a>Extra HTML attributes to apply to the form element. Use boolean true to apply a standalone attribute, e.g. &#39;required&#39; =&gt; true</td>
 </tr>
 <tr>
-<td><code>public string</code></td>
+<td>public string</td>
 <td><a href="http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#95-99">$field_class</a></td>
-<td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$field_class">#</a>元素的 CSS 类</td>
+<td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$field_class">#</a>CSS class for form element</td>
 </tr>
 <tr>
-<td><code>public boolean</code></td>
+<td>public boolean</td>
 <td><a href="http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#101-105">$one_label_per_item</a></td>
 <td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$one_label_per_item">#</a>Repeat the label for each element if $limit &gt; 1</td>
 </tr>
 <tr>
-<td><code>public boolean</code></td>
+<td>public boolean</td>
 <td><a href="http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#107-111">$sortable</a></td>
 <td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$sortable">#</a>Allow draggable sorting if $limit &gt; 1</td>
 </tr>
 <tr>
-<td><code>public string</code></td>
+<td>public string</td>
 <td><a href="http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#113-117">$label_element</a></td>
-<td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$label_element">#</a>Label 使用的 HTML 元素</td>
+<td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$label_element">#</a>HTML element to use for label</td>
 </tr>
 <tr>
-<td><code>public callable</code></td>
+<td>public callable</td>
 <td><a href="http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#119-123">$sanitize</a></td>
-<td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$sanitize">#</a>净化输入的函数</td>
+<td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$sanitize">#</a>Function to use to sanitize input</td>
 </tr>
 <tr>
-<td><code>public callback[]</code></td>
+<td>public callback[]</td>
 <td><a href="http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#125-129">$validate</a></td>
-<td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$validate">#</a>验证输入的函数</td>
+<td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$validate">#</a>Functions to use to validate input</td>
 </tr>
 <tr>
-<td>`public string</td>
-<td>array`</td>
+<td>public string\</td>
+<td>array</td>
 <td><a href="http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#131-137">$validation_rules</a></td>
 <td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$validation_rules">#</a>jQuery validation rule(s) used to validate this field, entered as a string or associative array. These rules will be automatically converted to the appropriate Javascript format. For more information see <a href="http://jqueryvalidation.org/documentation/">http://jqueryvalidation.org/documentation/</a></td>
 </tr>
 <tr>
-<td>`public string</td>
-<td>array`</td>
+<td>public string\</td>
+<td>array</td>
 <td><a href="http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#139-146">$validation_messages</a></td>
 <td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$validation_messages">#</a>jQuery validation messages used by the rule(s) defined for this field, entered as a string or associative array. These rules will be automatically converted to the appropriate Javascript format. Any messages without a corresponding rule will be ignored. For more information see <a href="http://jqueryvalidation.org/documentation/">http://jqueryvalidation.org/documentation/</a></td>
 </tr>
 <tr>
-<td><code>public boolean</code></td>
+<td>public boolean</td>
 <td><a href="http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#148-153">$required</a></td>
 <td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$required">#</a>Makes the field required on WordPress context forms that already have built-in validation. This is necessary only for the fields used with the term add context.</td>
 </tr>
 <tr>
-<td>`public string</td>
-<td>null`</td>
+<td>public string\</td>
+<td>null</td>
 <td><a href="http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#155-159">$data_type</a></td>
 <td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$data_type">#</a>Data type this element is used in, generally set internally</td>
 </tr>
 <tr>
-<td>`public integer</td>
-<td>null`</td>
+<td>public integer\</td>
+<td>null</td>
 <td><a href="http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#161-165">$data_id</a></td>
 <td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$data_id">#</a>ID for $this-&gt;data_type, eg $post-&gt;ID, generally set internally</td>
 </tr>
 <tr>
-<td><code>public boolean</code></td>
+<td>public boolean</td>
 <td><a href="http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#167-171">$save_empty</a></td>
 <td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$save_empty">#</a>If true, save empty elements to DB (if $this-&gt;limit != 1; single elements are always saved)</td>
 </tr>
 <tr>
-<td><code>public boolean</code></td>
+<td>public boolean</td>
 <td><a href="http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#173-177">$skip_save</a></td>
 <td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$skip_save">#</a>Do not save this field (useful for fields which handle saving their own data)</td>
 </tr>
 <tr>
-<td><code>public boolean</code></td>
+<td>public boolean</td>
 <td><a href="http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#179-183">$index</a></td>
 <td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$index">#</a>Save this field additionally to an index</td>
 </tr>
 <tr>
-<td><code>public boolean</code></td>
+<td>public boolean</td>
 <td><a href="http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#185-190">$serialize_data</a></td>
 <td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$serialize_data">#</a>Save the fields to their own keys (only works in some contexts). Default is true.</td>
 </tr>
 <tr>
-<td><code>public Fieldmanager_Datasource</code></td>
+<td>public <a href="http://api.fieldmanager.org/class-Fieldmanager_Datasource.html">Fieldmanager_Datasource</a></td>
 <td><a href="http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#192-196">$datasource</a></td>
 <td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$datasource">#</a>Optionally generate field from datasource. Used by Fieldmanager_Autocomplete and Fieldmanager_Options.</td>
 </tr>
 <tr>
-<td><code>public array[]</code></td>
+<td>public array[]</td>
 <td><a href="http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#198-206">$display_if</a></td>
 <td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$display_if">#</a>Field name and value on which to display element. Sample: $element-&gt;display_if = array( &#39;src&#39; =&gt; &#39;display-if-src-element&#39;, &#39;value&#39; =&gt; &#39;display-if-src-value&#39; );</td>
 </tr>
 <tr>
-<td><code>public string</code></td>
+<td>public string</td>
 <td><a href="http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#208-213">$add_more_position</a></td>
 <td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$add_more_position">#</a>Where the new item should to added ( top/bottom ) of the stack. Used by Add Another button &quot;top\</td>
 <td>bottom&quot;</td>
 </tr>
 <tr>
-<td><code>public boolean</code></td>
+<td>public boolean</td>
 <td><a href="http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#215-219">$remove_default_meta_boxes</a></td>
 <td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$remove_default_meta_boxes">#</a>If true, remove any default meta boxes that are overridden by Fieldmanager fields</td>
 </tr>
 <tr>
-<td><code>public string</code></td>
+<td>public string</td>
 <td><a href="http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#221-225">$template</a></td>
 <td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$template">#</a>Template The path to the field template</td>
 </tr>
 <tr>
-<td><code>public array</code></td>
+<td>public array</td>
 <td><a href="http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#227-231">$meta_boxes_to_remove</a></td>
 <td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$meta_boxes_to_remove">#</a>If $remove_default_meta_boxes is true, this array will be populated with the list of default meta boxes to remove</td>
 </tr>
 <tr>
-<td><code>public mixed</code></td>
+<td>public mixed</td>
 <td><a href="http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#233-237">$default_value</a></td>
 <td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$default_value">#</a>Default value The default value for the field, if unset</td>
 </tr>
 <tr>
-<td>`public callable</td>
-<td>null`</td>
+<td>public callable\</td>
+<td>null</td>
 <td><a href="http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#239-243">$index_filter</a></td>
 <td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$index_filter">#</a>Function that parses an index value and returns an optionally modified value.</td>
 </tr>
 <tr>
-<td><code>public string</code></td>
+<td>public string</td>
 <td><a href="http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#245-249">$input_type</a></td>
-<td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$input_type">#</a>输入类型，支持各种 HTML 5 输入类型</td>
+<td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$input_type">#</a>Input type, mainly to support HTML5 input types.</td>
 </tr>
 <tr>
-<td><code>public array</code></td>
+<td>public array</td>
 <td><a href="http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#251-259">$escape</a></td>
 <td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$escape">#</a>Custom escaping for labels, descriptions, etc. Associative array of $field =&gt; $callable arguments, for example:</td>
 </tr>
 <tr>
-<td><code>public boolean</code></td>
+<td>public boolean</td>
 <td><a href="http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#291-295">$is_attachment</a></td>
-<td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$is_attachment">#</a>是否显示在编辑附件页面</td>
+<td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$is_attachment">#</a>Whether or not this field is present on the attachment edit screen</td>
 </tr>
 </tbody>
 </table>
