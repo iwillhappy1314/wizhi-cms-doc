@@ -3,8 +3,7 @@
 }
 </style></head><body id="main" data-spy="scroll" data-target="#nav"><header id="header" class="wrapper"><div id="header-inner" class="inner"><h1 id="logo-wrap"><a id="logo" href="/wizhi-cms-doc/">Wizhi CMS</a></h1><nav id="main-nav"><a href="/wizhi-cms-doc/" class="main-nav-link">文档</a><a target="_blank" href="https://github.com/iwillhappy1314/wizhi-cms" class="main-nav-link">代码</a><a target="_blank" href="https://github.com/iwillhappy1314/wizhi-ui" class="main-nav-link">UI 库</a><a target="_blank" href="https://github.com/iwillhappy1314/front" class="main-nav-link">前端工具</a><a target="_blank" href="https://github.com/iwillhappy1314/enter" class="main-nav-link">主题框架</a><a target="_blank" href="https://www.wpzhiku.com" class="main-nav-link">WordPress 智库</a></nav></div></header><div id="content-wrap"><div id="content" class="wrapper"><div id="content-inner"><article itemscope="" itemtype="http://schema.org/Article" class="article-container"><div class="article-inner"><div class="article"><div class="inner"><header class="article-header"><span>Wizhi CMS 文档</span></header><div itemprop="articleBody" class="article-content"><h2>Formmanager</h2><p>Formbuilder 已改用 WordPress FieldManager 的方案, 请参考文档 <a href="http://fieldmanager.org/docs/">Fieldmanager</a></p>
 <p>Formbuilder 的数据结构中，很多类型的数据都是以数组的方式保存的，这种方式可能会在获取和更新数据的时候带来一些不便，不过好处在于可以提高性能。</p>
-<p>Frommanager 插件支持以 tab 的形式显示自定义字段，对于自定义字段比较多的站点，可以提升后台的用户体</p>
-<p>验。</p>
+<p>Frommanager 插件支持以 tab 的形式显示自定义字段，对于自定义字段比较多的站点，可以提升后台的用户体验。</p>
 <h2>自定默认支持的属性</h2><p>所有自定义字段类型都继承自 Fieldmanager_Field 字段，Fieldmanager_Field 字段的属性也会被自动继承。</p>
 <table>
 <thead>
@@ -28,12 +27,12 @@
 <tr>
 <td><code>public integer</code></td>
 <td><a href="http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#32-38">$minimum_count</a></td>
-<td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$minimum_count">#</a>How many of these fields to display at a minimum, if $limit != 1. If $limit == $minimum_count, the &quot;add another&quot; button and the remove tool will be hidden.</td>
+<td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$minimum_count">#</a>$limit != 1 时最少显示多少个字段,  如果$limit == $minimum_count, 或元素数量少于这个数字时，移除按钮将被隐藏</td>
 </tr>
 <tr>
 <td><code>public integer</code></td>
 <td><a href="http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#40-45">$extra_elements</a></td>
-<td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$extra_elements">#</a>How many empty fields to display if $limit != 1 when the total fields in the loaded data + $extra_elements &gt; $minimum_count.</td>
+<td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$extra_elements">#</a>$limit != 1 时显示多少空字段，已加载数据中的元素数量 + $extra_elements &gt; $minimum_count.</td>
 </tr>
 <tr>
 <td><code>public string</code></td>
@@ -108,17 +107,17 @@
 <tr>
 <td><code>public string or array</code></td>
 <td><a href="http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#131-137">$validation_rules</a></td>
-<td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$validation_rules">#</a>jQuery validation rule(s) used to validate this field, entered as a string or associative array. These rules will be automatically converted to the appropriate Javascript format. For more information see <a href="http://jqueryvalidation.org/documentation/">http://jqueryvalidation.org/documentation/</a></td>
+<td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$validation_rules">#</a>jQuery 验证规则，输入自负或关联数组，规则会自动被转化为  Javascript format，更多信息参考 <a href="http://jqueryvalidation.org/documentation/">jQuery 文档</a></td>
 </tr>
 <tr>
 <td><code>public string or array</code></td>
 <td><a href="http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#139-146">$validation_messages</a></td>
-<td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$validation_messages">#</a>jQuery validation messages used by the rule(s) defined for this field, entered as a string or associative array. These rules will be automatically converted to the appropriate Javascript format. Any messages without a corresponding rule will be ignored. For more information see <a href="http://jqueryvalidation.org/documentation/">http://jqueryvalidation.org/documentation/</a></td>
+<td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$validation_rules">#</a>jQuery 验证规则消息，输入自负或关联数组，规则会自动被转化为  Javascript format，更多信息参考 <a href="http://jqueryvalidation.org/documentation/">jQuery 文档</a></td>
 </tr>
 <tr>
 <td><code>public boolean</code></td>
 <td><a href="http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#148-153">$required</a></td>
-<td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$required">#</a>Makes the field required on WordPress context forms that already have built-in validation. This is necessary only for the fields used with the term add context.</td>
+<td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$required">#</a> 使已经具有内置验证的 WordPress 字段为必填项，仅在添加分类法项目时使用</td>
 </tr>
 <tr>
 <td><code>public string or null</code></td>
@@ -158,12 +157,12 @@
 <tr>
 <td><code>public array[]</code></td>
 <td><a href="http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#198-206">$display_if</a></td>
-<td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$display_if">#</a>Field name and value on which to display element. Sample: $element-&gt;display_if = array( &#39;src&#39; =&gt; &#39;display-if-src-element&#39;, &#39;value&#39; =&gt; &#39;display-if-src-value&#39; );</td>
+<td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$display_if">#</a>根据条件显示表单元素，如: $element-&gt;display_if = array( &#39;src&#39; =&gt; &#39;display-if-src-element&#39;, &#39;value&#39; =&gt; &#39;display-if-src-value&#39; );</td>
 </tr>
 <tr>
 <td><code>public string</code></td>
 <td><a href="http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#208-213">$add_more_position</a></td>
-<td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$add_more_position">#</a>Where the new item should to added ( top or bottom ) of the stack. Used by Add Another button &quot;top or bottom&quot;</td>
+<td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$add_more_position">#</a>新项目应该被添加到什么地址（头部或底部）可选的值为 &quot;top 或 bottom&quot;</td>
 </tr>
 <tr>
 <td><code>public boolean</code></td>
@@ -188,7 +187,7 @@
 <tr>
 <td><code>public callable or null</code></td>
 <td><a href="http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#239-243">$index_filter</a></td>
-<td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$index_filter">#</a>Function that parses an index value and returns an optionally modified value.</td>
+<td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$index_filter">#</a>解析索引值并返回修改侯的值的功能</td>
 </tr>
 <tr>
 <td><code>public string</code></td>
@@ -198,7 +197,7 @@
 <tr>
 <td><code>public array</code></td>
 <td><a href="http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#251-259">$escape</a></td>
-<td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$escape">#</a>Custom escaping for labels, descriptions, etc. Associative array of $field =&gt; $callable arguments, for example:</td>
+<td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$escape">#</a>标签、描述自定义 escaping，如：$field =&gt; $callable 关联数组</td>
 </tr>
 <tr>
 <td><code>public boolean</code></td>
