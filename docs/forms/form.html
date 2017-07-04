@@ -3,7 +3,9 @@
 }
 </style></head><body id="main" data-spy="scroll" data-target="#nav"><header id="header" class="wrapper"><div id="header-inner" class="inner"><h1 id="logo-wrap"><a id="logo" href="/wizhi-cms-doc/">Wizhi CMS</a></h1><nav id="main-nav"><a href="/wizhi-cms-doc/" class="main-nav-link">文档</a><a target="_blank" href="https://github.com/iwillhappy1314/wizhi-cms" class="main-nav-link">代码</a><a target="_blank" href="https://github.com/iwillhappy1314/wizhi-ui" class="main-nav-link">UI 库</a><a target="_blank" href="https://github.com/iwillhappy1314/front" class="main-nav-link">前端工具</a><a target="_blank" href="https://github.com/iwillhappy1314/enter" class="main-nav-link">主题框架</a><a target="_blank" href="https://www.wpzhiku.com" class="main-nav-link">WordPress 智库</a></nav></div></header><div id="content-wrap"><div id="content" class="wrapper"><div id="content-inner"><article itemscope="" itemtype="http://schema.org/Article" class="article-container"><div class="article-inner"><div class="article"><div class="inner"><header class="article-header"><span>Wizhi CMS 文档</span></header><div itemprop="articleBody" class="article-content"><h2>Formmanager</h2><p>Formbuilder 已改用 WordPress FieldManager 的方案, 请参考文档 <a href="http://fieldmanager.org/docs/">Fieldmanager</a></p>
 <p>Formbuilder 的数据结构中，很多类型的数据都是以数组的方式保存的，这种方式可能会在获取和更新数据的时候带来一些不便，不过好处在于可以提高性能。</p>
-<p>Frommanager 插件支持以 tab 的形式显示自定义字段，对于自定义字段比较多的站点，可以提升后台的用户体验。</p>
+<p>Frommanager 插件支持以 tab 的形式显示自定义字段，对于自定义字段比较多的站点，可以提升后台的用户体</p>
+<p>验。</p>
+<h2>自定默认支持的属性</h2><p>所有自定义字段类型都继承自 Fieldmanager_Field 字段，Fieldmanager_Field 字段的属性也会被自动继承。</p>
 <table>
 <thead>
 <tr>
@@ -66,7 +68,7 @@
 <tr>
 <td><code>public string or boolean[]</code></td>
 <td><a href="http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#89-93">$attributes</a></td>
-<td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$attributes">#</a>Extra HTML attributes to apply to the form element. Use boolean true to apply a standalone attribute, e.g. &#39;required&#39; =&gt; true</td>
+<td><a href="http://api.fieldmanager.org/class-Fieldmanager_Field.html#$attributes">#</a>附加 HTML 元素，设置为 true 应用独立属性，如：&#39;required&#39; =&gt; true</td>
 </tr>
 <tr>
 <td><code>public string</code></td>

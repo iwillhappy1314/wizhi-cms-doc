@@ -858,11 +858,11 @@ a.article-title:hover {
 }
 
 .article-content table td, .article-content table th {
-    padding: 5px 15px
+    padding: 8px 15px;
 }
 
 .article-content table tr:nth-child(2n) {
-    background: #eee
+    background: #f3f3f3;
 }
 
 .article-footer {
