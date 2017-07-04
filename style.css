@@ -859,6 +859,7 @@ a.article-title:hover {
 
 .article-content table td, .article-content table th {
     padding: 8px 15px;
+    border-bottom: 1px solid #ddd;
 }
 
 .article-content table tr:nth-child(2n) {
