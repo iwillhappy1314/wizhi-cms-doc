@@ -849,6 +849,8 @@ a.article-title:hover {
 }
 
 .article-content table {
+    border-spacing: 0;
+    border-collapse: collapse;
     max-width: 100%;
     border: 1px solid #e3e3e3
 }
@@ -860,7 +862,7 @@ a.article-title:hover {
 .article-content table td,
 .article-content table th {
     padding: 8px 15px;
-    border-bottom: 1px solid #ddd;
+    border: 1px solid #ddd;
 }
 
 .article-content table td code,
