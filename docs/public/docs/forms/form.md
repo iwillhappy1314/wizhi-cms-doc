@@ -12,8 +12,9 @@ Frommanager 插件支持以 tab 的形式显示自定义字段，对于自定义
 
 所有自定义字段类型都继承自 Fieldmanager_Field 字段，Fieldmanager_Field 字段的属性也会被自动继承。
 
-| `public static boolean`          | [$debug](http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#12-16) | [#](http://api.fieldmanager.org/class-Fieldmanager_Field.html#$debug)如果设置为 true，显示调试信息 |
+| 属性可见性                            | 属性名称                                     | 属性说明                                     |
 | -------------------------------- | ---------------------------------------- | ---------------------------------------- |
+| `public static boolean`          | [$debug](http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#12-16) | [#](http://api.fieldmanager.org/class-Fieldmanager_Field.html#$debug)如果设置为 true，显示调试信息 |
 | `public integer`                 | [$limit](http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#18-22) | [#](http://api.fieldmanager.org/class-Fieldmanager_Field.html#$limit)显示多少字段，不限制设置为 0 |
 | `public integer`                 | [$minimum_count](http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#32-38) | [#](http://api.fieldmanager.org/class-Fieldmanager_Field.html#$minimum_count)How many of these fields to display at a minimum, if $limit != 1. If $limit == $minimum_count, the "add another" button and the remove tool will be hidden. |
 | `public integer`                 | [$extra_elements](http://api.fieldmanager.org/source-class-Fieldmanager_Field.html#40-45) | [#](http://api.fieldmanager.org/class-Fieldmanager_Field.html#$extra_elements)How many empty fields to display if $limit != 1 when the total fields in the loaded data + $extra_elements > $minimum_count. |
